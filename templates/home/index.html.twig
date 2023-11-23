@@ -4,7 +4,11 @@
 
 {% block body %}
 
-    <h1> Welcome  {{ app.user.username }} ! </h1>
+    <h1> Welcome {% if app.user %} {{ app.user.username }}
+        <a href="{{ path('app_logout') }}"></a>
+    {% else %}
+        <a href="{{ path('app_login') }}" ></a>
+        {% endif %} !</h1>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
