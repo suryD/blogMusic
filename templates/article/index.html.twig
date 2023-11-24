@@ -1,11 +1,28 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article{% endblock %}
+
+{% block title %}{{ article.title }}{% endblock %}
 
 {% block body %}
-    <h1>Nouvel article</h1>
+<div class="container">
 
-    {{ form_start(form) }}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
-{% endblock %}
+    <div class="row">
+        <div class="col">
+            <h1 class="article-title">{{ article.title }}</h1>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+        <div class="col">
+            <div id="article-content" class="article-content">
+            </div>
+        </div>
+    </div>
+
+        <div class="article-data d-none"
+             data-id="{{ article.id }}">
+        </div>
+</div>
+    {% endblock %}

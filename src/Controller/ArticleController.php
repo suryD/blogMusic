@@ -16,7 +16,7 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class ArticleController extends AbstractController
 {
-    #[Route('/article', name: 'article_', methods: ['GET'])]
+    #[Route('/article', name: 'article_', methods: ['GET','POST©'])]
     public function index ( ArticleRepository $articleRepository, Request $request):Response
     {
         $article = new Article();
@@ -51,6 +51,7 @@ class ArticleController extends AbstractController
             // Enregistrez l'entité dans la base de données
             //$entityManager->persist($article);
             //$entityManager->flush();
+
         }
 
         return $this->render('article/new.html.twig', [
@@ -60,6 +61,27 @@ class ArticleController extends AbstractController
         ]);
     }
 
+
+    #[Route('/article/{slug}', name: 'article/list', methods: ['GET', 'POST'])]
+    public function show(Article $article, Request $request, EntityManagerInterface $em): Response
+    {
+
+        $form = $this->createForm(CommentType::class, $comment);
+        $form->handleRequest($request);
+        if($form->isSubmitted() && $form->isValid()) {
+            $em->persist($comment);
+            $em->flush();
+
+            $this->addFlash('success', 'Votre article a bien été enregistré.');
+
+            return $this->redirectToRoute('list.html.twig', ['slug' => $article->getSlug()]);
+        }
+
+        return $this->render('list.html.twig', [
+            'article' => $article,
+            'form' => $form->createView()
+        ]);
+    }
 
 
 

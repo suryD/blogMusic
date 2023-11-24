@@ -3,8 +3,10 @@
 {% block title %}The Midnight Computers - Blog{% endblock %}
 
 {% block body %}
-
-    <h1 class="text-start"> Welcome {% if app.user %} {{ app.user.username }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <h1 class="text-md-center"> Welcome {% if app.user %} {{ app.user.username }}
         <a href="{{ path('app_logout') }}"></a>
     {% else %}
         <a href="{{ path('app_login') }}" ></a>
@@ -13,7 +15,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-md-5">
+            <div class="col-md-6">
             <div id="carouselExampleIndicators" class="carousel slide w-auto" data-bs-ride="carousel">
                 <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -42,17 +44,21 @@
 
             </div>
             </div>
-     <div class="col-md-7">
+     <div class="col-md-6">
         <div> The Midnight Computers est né de l'esprit et des tripes de Jonathann Cast, désireux de montrer son amour pour le côté sombre des années 80.
-            Mélangeant la rigueur de la techno à l'intensité des synthés new wave, The Midnight Computers vous fera danser sur vos angoisses.
-            Leur premier album " Anxious " est immédiatement repéré, signé et pressé par Manic Depression records (fr). Il délivre neuf titres d'une puissance folle traduisant avec une extrême justesse la maladie d'une époque.
-            The Midnight Computers fait battre le cœur à travers les machines.
+            <p>   Mélangeant la rigueur de la techno à l'intensité des synthés new wave. </p>
+            The Midnight Computers vous fera danser sur vos angoisses.
+            Leur premier album " Anxious " est immédiatement repéré, signé et pressé par Manic Depression records (fr).
+            <p>Il délivre neuf titres d'une puissance folle traduisant avec une extrême justesse la maladie d'une époque.</p>
+            <p>The Midnight Computers fait battre le cœur à travers les machines.</p>
+            <p> Prochaines dates 2024 à venir</p>
+             Prochaines collaborations fin 2024
         </div>
             </div>
         </div>
 
             <div class="row">
-    <div class="col">
+    <div class="col-md-12">
     <div class="ratio ratio-16x9">
     <iframe src="https://www.youtube.com/embed/N66RvuuTHyE" title="THE MIDNIGHT COMPUTERS - Violence (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
