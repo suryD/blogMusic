@@ -4,19 +4,23 @@
 
 {% block body %}
 
-    <h1> Welcome {% if app.user %} {{ app.user.username }}
+    <h1 class="text-start"> Welcome {% if app.user %} {{ app.user.username }}
         <a href="{{ path('app_logout') }}"></a>
     {% else %}
         <a href="{{ path('app_login') }}" ></a>
         {% endif %} !</h1>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-5">
+            <div id="carouselExampleIndicators" class="carousel slide w-auto" data-bs-ride="carousel">
+                <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
+                </div>
+                <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src=" https://scontent-cdg4-2.xx.fbcdn.net/v/t39.30808-6/336687166_520334386929864_2930483593524117359_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=nw3bmObUG1QAX80Jpxy&_nc_ht=scontent-cdg4-2.xx&oh=00_AfCV1yWo9-0wn9L9--sWyZyby1WLP9MrrPJmeiHvRn4LsQ&oe=65633205" class="img-fluid" alt="image1">
             </div>
@@ -35,6 +39,24 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div>
 
+            </div>
+            </div>
+     <div class="col-md-7">
+        <div> The Midnight Computers est né de l'esprit et des tripes de Jonathann Cast, désireux de montrer son amour pour le côté sombre des années 80.
+            Mélangeant la rigueur de la techno à l'intensité des synthés new wave, The Midnight Computers vous fera danser sur vos angoisses.
+            Leur premier album " Anxious " est immédiatement repéré, signé et pressé par Manic Depression records (fr). Il délivre neuf titres d'une puissance folle traduisant avec une extrême justesse la maladie d'une époque.
+            The Midnight Computers fait battre le cœur à travers les machines.
+        </div>
+            </div>
+        </div>
+
+            <div class="row">
+    <div class="col">
+    <div class="ratio ratio-16x9">
+    <iframe src="https://www.youtube.com/embed/N66RvuuTHyE" title="THE MIDNIGHT COMPUTERS - Violence (Official Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    </div>
+    </div>
+    </div>
 {% endblock %}

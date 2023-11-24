@@ -8,6 +8,10 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+
+/**
+ * @property string|null $image
+ */
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
 class Article
 {
@@ -30,7 +34,9 @@ class Article
 
     #[ORM\OneToMany(mappedBy: 'article', targetEntity: Comment::class, orphanRemoval: true)]
     private Collection $comments;
-    private ?string $image;
+
+    #[ORM\OneToMany(mappedBy: 'GET', targetEntity: Image::class, cascade: ["persist", "remove"], orphanRemoval: true)]
+    private Collection $images;
 
     public function __construct()
     {
