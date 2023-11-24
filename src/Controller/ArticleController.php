@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ArticleController extends AbstractController
 {
-    #[Route('/article', name: 'article_', methods: ['POST'])]
+    #[Route('/article', name: 'article_', methods: ['GET'])]
     public function index ( ArticleRepository $articleRepository, Request $request):Response
     {
         $article = new Article();

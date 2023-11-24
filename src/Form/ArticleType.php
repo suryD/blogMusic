@@ -33,7 +33,6 @@ class ArticleType extends AbstractType
             ->add('save', SubmitType::class, [
                 'label' => 'Enregistrer l\'article',
             ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
