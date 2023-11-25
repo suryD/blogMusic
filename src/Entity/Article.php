@@ -147,4 +147,8 @@ class Article
     public function setTitle(string $string)
     {
     }
+
+    public function setRelation(User $param)
+    {
+    }
 }

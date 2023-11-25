@@ -6,6 +6,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ path('app_home') }}">Accueil</a>
                 </li>
@@ -18,11 +19,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href=" "> Souvenir</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('article_') }} ">Tableau de bord</a>
-                </li>
             </ul>
         </div>
+
+
+                <li class="nav-item">
+                    <a class="nav-link link-info" href="{{ path('admin') }} ">Dashboard Administration</a>
+                </li>
+
 
         {% if app.user %} {{ app.user.username }}
             <a href="{{ path('app_logout') }}" class="btn btn-dark">
@@ -39,4 +43,5 @@
                 </svg> Se connecter</a>
         {% endif %}
     </div>
+
 </nav>
