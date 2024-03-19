@@ -1,6 +1,6 @@
 <nav class="navbar bg-dark navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('app_home') }}">The Midnight Computer</a>
+        <a class="navbar-brand" href="{{ path('app_home') }}">The Midnight Computers</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,10 +22,11 @@
             </ul>
         </div>
 
-
+                {% if app.user and is_granted("ROLE_ADMIN")%}
                 <li class="nav-item">
                     <a class="nav-link link-info" href="{{ path('admin') }} ">Dashboard Administration</a>
                 </li>
+                {% endif %}
 
 
         {% if app.user %} {{ app.user.username }}
